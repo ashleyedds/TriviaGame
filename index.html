@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html>
-        <html lang="en-us">
+<html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
     <title>Harry Potter Quiz</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Harry Potter Trivia!</h1>
+    <header>
+        <img class="mainHeader" src="assets/images/harrypotter.png">
+        <img class="subHeader" src="assets/images/triviagame.png">
+    </header>
     <div id="beginGame">
         <button id="start">Start</button>
     </div>
 
-    <div id="triviaGame">
-        <div id="timer"></div>
+    <div id="timer"></div>
+    <div id="question"></div>
+    <div id="answers">
+        <div>
+            <button class="answerChoice" id="buttonA">
+                <h4>A</h4>
+            </button>
+        </div>
+        <div>
+            <button class="answerChoice" id="buttonB">
+                <h4>B</h4>
+            </button>
+        </div>
+        <div>
+            <button class="answerChoice" id="buttonC">
+                <h4>C</h4>
+            </button>
+        </div>
+        <div>
+            <button class="answerChoice" id="buttonD">
+                <h4>D</h4>
+            </button>
+        </div>
     </div>
 
-    <div id="endGameResults">
+    <div id="answerDisplay"></div>
 
+    <div id="endGameResults">
+        <h1>GAME OVER</h1>
     </div>
 
     <script src="assets/javascript/app.js"></script>

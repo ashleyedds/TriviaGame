@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+background: url("imgs/hogwarts.jpg") no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+
+/*Main header*/
+.mainHeader {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.subHeader {
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    z-index: -1;
+}
+
+
+/*Start button*/
+#start {
+    font-family: 'Alegreya', serif;
+    font-size: 75px;
+    color: #ffeecc;
+    position: relative;
+    left: 43%;
+    top: 100px;
+    background-color: transparent;
+    border: none;
+}
+
+#start:hover {
+    background-color: rgba(255, 255, 255, 0.56);
+    cursor: pointer;
+}
+
+
+/*Timer*/
+#timer {
+    font-family: 'Alegreya', serif;
+    font-size: 45px;
+    color: #ffeecc;
+    position: relative;
+    top: 50px;
+    left: 40%;
+}
+
+
+/*Question area*/
+#question {
+    font-family: 'Alegreya', serif;
+    font-size: 35px;
+    color: #002266;
+    height: 150px;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    top: 70px;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0.60);
+}
+
+/*Answer area*/
+#answers {
+    height: 300px;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    top: 70px;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0.60);
+}
+
+.answerChoice{
+    font-family: 'Alegreya', serif;
+    font-size: 35px;
+    color: #002266;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+
+.answerChoice:hover {
+    border: 2px solid #002266;
+    cursor: pointer;
+}
