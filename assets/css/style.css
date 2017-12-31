@@ -53,6 +53,7 @@ background-size: cover;
     position: relative;
     top: 50px;
     left: 40%;
+    width: 500px;
 }
 
 
@@ -68,6 +69,8 @@ background-size: cover;
     top: 70px;
     left: 25%;
     background-color: rgba(255, 255, 255, 0.60);
+    padding: 10px;
+    line-height: 1.6;;
 }
 
 /*Answer area*/
@@ -88,9 +91,57 @@ background-size: cover;
     background-color: transparent;
     border: none;
     width: 100%;
+    padding: 10px;
+    line-height: 1.6;
 }
 
 .answerChoice:hover {
     border: 2px solid #002266;
     cursor: pointer;
+}
+
+/*Response*/
+#answerDisplay {
+    height: 500px;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    top: 70px;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0.60);
+    font-family: 'Alegreya', serif;
+    font-size: 35px;
+    color: #002266;
+    line-height: 1.6;
+}
+
+#gif {
+    padding: 20px;
+    height: 300px;
+    width: 500px;
+}
+
+/*End game results*/
+#endGameResults {
+    height: 300px;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    top: 70px;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0.60);
+    font-family: 'Alegreya', serif;
+    font-size: 35px;
+    color: #002266;
+}
+
+#startOver {
+    font-family: 'Alegreya', serif;
+    font-size: 75px;
+    color: #ffeecc;
+    position: relative;
+    left: 43%;
+    top: 100px;
+    background-color: transparent;
+    border: none;
 }
