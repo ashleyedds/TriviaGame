@@ -9,6 +9,12 @@ $(document).ready(function () {
     var incorrectAnswers = 0;
     var unAnswered = 15;
 
+    //sounds
+    var audioTheme = new Audio("assets/audio/hedwigstheme.mp3");
+    var audioWrong = new Audio("assets/audio/bloodyhell.mp3");
+    var audioCorrect = new Audio("assets/audio/welldone.mp3");
+    var audioTimeOut = new Audio("assets/audio/dontyoutworead.mp3");
+
 
     //questions
     var q1 = {
@@ -39,7 +45,7 @@ $(document).ready(function () {
         question: "Which Weasley died?",
         possibleAnswers: ["A. Charlie", "B. Fred", "C. Bill", "D. George"],
         flags: [false, true, false, false],
-        answer: "Fred",
+        answer: "Fred (may he rest in peace)",
         displayGif: "<img id='gif' src = 'assets/images/q4.gif'>"
     };
 
@@ -47,7 +53,7 @@ $(document).ready(function () {
         question: "What is Albus Dumbledore's full name?",
         possibleAnswers: ["A. Albus Patrick Flimbus Derek Dumblebore", "B. Albus William Bob Patrick Dumbledore", "C. Albus Aberforth Brian Dumbledore", "D. Albus Percival Wulfric Brian Dumbledore"],
         flags: [false, false, false, true],
-        answer: "D. Albus Percival Wulfric Brian Dumbledore",
+        answer: "Albus Percival Wulfric Brian Dumbledore",
         displayGif: "<img id='gif' src = 'assets/images/q5.gif'>"
     };
 
@@ -141,13 +147,16 @@ $(document).ready(function () {
     $("#answers").hide();
     $("#answerDisplay").hide();
     $("#endGameResults").hide();
+    audioTheme.play();
 
     $("#start").on("click", function () {
         $("#beginGame").hide();
-        $("#question").show();
-        $("#answers").show();
+        $("#timer").show();
+        audioTheme.pause();
         startTimer();
         loadQuestion();
+        $("#question").show();
+        $("#answers").show();
     });
 
     //Start timer countdown
@@ -165,6 +174,7 @@ $(document).ready(function () {
                     "<p>The correct answer is: " + questionArray[index].answer + "</p>" +
                     questionArray[index].displayGif);
                 $("#answerDisplay").show();
+                audioTimeOut.play();
                 setTimeout(hide, 5000);
                 timer = 21;
                 index++;
@@ -198,9 +208,10 @@ $(document).ready(function () {
         $("#answers").hide();
         $("#answerDisplay").html(
             "<p>Excellent!</p>" +
-            questionArray[index].answer + "<p> is correct!</p>" +
+            "<p>" + questionArray[index].answer + " is correct!</p>" +
             questionArray[index].displayGif);
         $("#answerDisplay").show();
+        audioCorrect.play();
         setTimeout(hide, 5000);
         timer = 21;
         index++;
@@ -215,9 +226,10 @@ $(document).ready(function () {
         $("#answers").hide();
         $("#answerDisplay").html(
             "<p>Tough luck!</p>" +
-            questionArray[index].answer + "<p> is actually the correct answer. Hermione would be ashamed.</p>" +
+            "<p>" + questionArray[index].answer + " is actually the correct answer. Hermione would be ashamed.</p>" +
             questionArray[index].displayGif);
         $("#answerDisplay").show();
+        audioWrong.play();
         setTimeout(hide, 5000);
         timer = 21;
         index++;
@@ -289,6 +301,7 @@ $(document).ready(function () {
             "<button id='startOver'>Start Over?</button>"
         )
         $("#endGameResults").show();
+        audioTheme.play();
 
         //Reload game
         $("#startOver").on("click", function () {
