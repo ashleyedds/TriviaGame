@@ -1,6 +1,6 @@
 $(document).ready(function () {
     //timer stuff
-    var timer = 5;
+    var timer = 21;
     var intervalId;
 
 
@@ -166,7 +166,7 @@ $(document).ready(function () {
                     questionArray[index].displayGif);
                 $("#answerDisplay").show();
                 setTimeout(hide, 5000);
-                timer = 5;
+                timer = 21;
                 index++;
                 nextQuestion();
             }
@@ -202,7 +202,7 @@ $(document).ready(function () {
             questionArray[index].displayGif);
         $("#answerDisplay").show();
         setTimeout(hide, 5000);
-        timer = 5;
+        timer = 21;
         index++;
         nextQuestion();
     }
@@ -219,7 +219,7 @@ $(document).ready(function () {
             questionArray[index].displayGif);
         $("#answerDisplay").show();
         setTimeout(hide, 5000);
-        timer = 5;
+        timer = 21;
         index++;
         nextQuestion();
     }
@@ -302,6 +302,7 @@ $(document).ready(function () {
             unAnswered = 15;
             loadQuestion();
             startTimer();
+            $("#timer").show();
         });
     }
 
